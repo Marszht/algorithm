@@ -100,4 +100,21 @@ export class Heap {
     }
     return this.heapContainer[0];
   }
+
+  poll() {
+    if (this.heapContainer.length === 0) {
+      return null;
+    }
+    // if (this.)
+  }
+
+  /**
+   * 
+   * @param {*} firstElement 
+   * @param {*} secondElement 
+   * @return {boolean}
+   */
+  pairIsInCorrectOrder(firstElement, secondElement) {
+    throw new Error("你需要重写Heap 中的pairIsInCorrectOrder方法")
+  }
 }

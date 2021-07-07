@@ -14,4 +14,5 @@
 
 ## [math](./algorithms/math)
 - [阶乘n!](./algorithms/math/factorial/factorial.js)
-- [阶乘n!](./algorithms/math/factorial.js)
+- [斐波那契数列](./algorithms/math/fibonacci/fibonacci.js)
+- [素数检测](./algorithms/math/primality-test/primality-test.js)
