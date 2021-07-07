@@ -1,4 +1,4 @@
-export class Heap {
+ class Heap {
   constructor() {
     if (new.target === Heap) {
       //  需要指定为 最大堆 最小堆
@@ -49,8 +49,7 @@ export class Heap {
   }
 
   /**
-   * @param {number} parentIndex 
-   * @returns {boolean}
+   * @param {number} parentIndex * @returns {boolean}
    */
   hasRightChild(parentIndex) {
     return this.getRightChildIndex(parentIndex) < this.heapContainer.length;
@@ -250,3 +249,5 @@ export class Heap {
     throw new Error("你需要重写Heap 中的pairIsInCorrectOrder方法")
   }
 }
+
+module.exports = Heap;

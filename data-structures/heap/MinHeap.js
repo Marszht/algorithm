@@ -1,6 +1,6 @@
 const Heap = require("./Heap");
 
-export class MinHeap extends Heap {
+ class MinHeap extends Heap {
 
   /**
    * 判断当前两个元素是否在堆中符合位置，
@@ -14,3 +14,5 @@ export class MinHeap extends Heap {
     return firstElement <= secondElement;
   }
 }
+
+module.exports = MinHeap;
