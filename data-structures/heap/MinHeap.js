@@ -14,5 +14,14 @@ const Heap = require("./Heap");
     return firstElement <= secondElement;
   }
 }
+const minHeap = new MinHeap();
+
+minHeap.add(2);
+minHeap.add(1);
+minHeap.add(21);
+minHeap.add(43);
+minHeap.add(5);
+
+console.log(minHeap);
 
 module.exports = MinHeap;

@@ -14,3 +14,4 @@ export class MaxHeap extends Heap {
     return firstElement >= secondElement;
   }
 }
+
