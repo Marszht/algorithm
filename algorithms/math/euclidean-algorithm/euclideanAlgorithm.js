@@ -25,7 +25,7 @@ console.log(euclideanAlgorithms(55, 15))
  * @param {number} originalA 
  * @param {number} originalB 
  */
-const euclideanAlgorithmRecursive = (originalA, originalB) => {
+ const euclideanAlgorithmRecursive = (originalA, originalB) => {
   let a = Math.abs(originalA);
   let b = Math.abs(originalB);
 
@@ -33,3 +33,8 @@ const euclideanAlgorithmRecursive = (originalA, originalB) => {
 }
 
 console.log(euclideanAlgorithmRecursive(55, 15))
+
+module.exports = {
+  euclideanAlgorithms,
+  euclideanAlgorithmRecursive
+}
