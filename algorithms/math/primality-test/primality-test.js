@@ -1,8 +1,3 @@
-// 质数检测，就是判断一个整数是否为质数
-// 质数：只能被 1 和自身整除的正整数为质数
-
-// 解题思路：找 1 - num 之间 是否 有 除 1 和 num 之外的数能够整除 num 就是遍历 查找、 
-// 优化：遍历 优化 只需要遍历 平方根，然后一些边界条件 提交前判断
 
 const testIsPrimality = (num) => {
   console.time("first");
@@ -22,7 +17,6 @@ const testIsPrimality = (num) => {
   return true;
 };
 
-// 再优化一下， 遍历其实不用遍历到 num ，然后偶数 也可以剔除， 质数 只可能是奇数
 
 const testIsPrimality2 = (num) => {
   console.time("second");
