@@ -77,7 +77,7 @@ class LinkedList {
     let deletedNode = null;
 
     // 如果 value是 链表头部
-    whild(this.head && value === this.head.value) {
+    while(this.head && value === this.head.value) {
       deletedNode = this.head;
       this.head = this.head.next;
     }
@@ -106,20 +106,62 @@ class LinkedList {
   }
 
   /**
+   * 删除尾部 元素
    * @return {LinkedListNode}
    */
   deleteTail() {
     const deletedTail = this.tail;
 
+    // 如果只有一个节点，tail 也就是 head 
     if (this.head === this.tail) {
       this.head = null;
       this.tail = null;
+
+      return deletedTail;
     }
 
-    // 重新找回 tail , 也就是 前一个节点
+    // 重新找回 tail , 也就是 tail前一个节点
     let currentNode = this.head;
-    while(currentNode.next) {}
+    while(currentNode.next) {
+      // 跟下面的实现一样
+      if (currentNode.next !== deletedTail) {
+        currentNode = currentNode.next;
+      } else {
+        currentNode.next = null;
+        this.tail = currentNode;
+        return deletedTail;
+      }
+      // 这个表示 currentNode.next 为 tail
+      // if (!currentNode.next.next) {
+      //   currentNode.next = null;
+      // } else {
+      //   currentNode = currentNode.next;
+      // }
+    }
+    // this.tail = currentNode;
     return deletedTail;
+  }
+
+  /**
+   * 删除头部 节点
+   * @return {LinkedListNode}
+   */
+  deleteHead() {
+    let deletedHead = this.head;
+    if (!deletedHead) {
+      return null;
+    }
+
+    // 如果 只有一个元素
+    if (deletedHead === this.tail) {
+      this.head = null;
+      this.tail = null;
+    }
+    let currentNode = this.head;
+    if (currentNode.next) {
+      this.head = currentNode.next;
+    }
+    return deletedHead;
   }
 
   /**
@@ -133,6 +175,21 @@ class LinkedList {
       currentNode = currentNode.next;
     }
   }
+
+  /**
+   * 把一个数组转换为链表， 就是遍历 数组，然后 append
+   * @param {[]]} values 
+   * @return {LinkedList}
+   */
+  fromArray(values) {
+    values.forEach(item => this.append(item));
+    return this;
+  }
+
+  reverse() {
+    
+  }
+
 }
 
 const liskedList = new LinkedList();
@@ -140,8 +197,11 @@ const liskedList = new LinkedList();
 liskedList.append(3)
 liskedList.append(4)
 liskedList.append(5)
-liskedList.find(4);
 liskedList.prepend(2);
+liskedList.delete(2);
+liskedList.deleteTail();
+liskedList.deleteTail();
+// liskedList.deleteTail();
 
 console.log(liskedList)
 
