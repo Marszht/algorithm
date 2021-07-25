@@ -35,5 +35,40 @@ const testIsPrimality2 = (num) => {
   return true;
 };
 
-console.log(testIsPrimality(1000002));
-console.log(testIsPrimality2(1000002));
+// console.log(testIsPrimality(1000002));
+// console.log(testIsPrimality2(1000002));
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+ var countPrimes = function(n) {
+  let primes = [];
+  
+  function testIsPrime(value) {
+      if (value <= 1) return false;
+      if (value <= 3) return true;
+      if (value%2 === 0) return false;
+      
+      let sqrt = Math.sqrt(value);
+      for (let i = 3; i <= sqrt; i++) {
+          if (value % i === 0) {
+              return false
+          }
+      }
+      
+      return true;
+      
+  }
+  
+  for (let i = 0; i <= n; i++) {
+      if (testIsPrime(i)) {
+          primes.push(i)
+      }
+  }
+  console.log(primes)
+  return primes.length;
+};
+
+console.log(countPrimes(5000000))
+
