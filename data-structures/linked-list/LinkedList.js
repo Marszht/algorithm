@@ -13,30 +13,30 @@ class LinkedList {
   append(value) {
     const newNode = new LinkedListNode(value);
 
+    // 如果链表没有节点，则
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
       return this;
     }
-
+    // 新节点插入到链表尾部，新节点为新链表的尾部
     this.tail.next = newNode;
     this.tail = newNode;
     return this;
   }
 
   /**
-   * @param {object} findParams 
-   * @param {*} findParams.value 
+   * @param {object} findPa rams
+   * @param {*} findParams.value
    * @param {Function} [findParams.callback ]
    * @returns {LinkedListNode}
    */
-  find({value = undefined, callback = undefined}) {
+  find({ value = undefined, callback = undefined }) {
     if (!this.head) return false;
 
     let currentNode = this.head;
 
     while (currentNode) {
-
       // 这个其实可以不用
       if (callback && callback(currentNode.value)) {
         return currentNode;
@@ -51,24 +51,24 @@ class LinkedList {
 
   /**
    * 添加到链表头部
-   * @param {*} value 
-   * @returns {LinkedListNode} 
+   * @param {*} value
+   * @returns {LinkedListNode}
    */
   prepend(value) {
     const newNode = new LinkedListNode(value);
 
     // 当 LinkedListNode 为空的时候，
     if (!this.tail) {
-      this.tail = newNode
+      this.tail = newNode;
     }
     newNode.next = this.head;
     this.head = newNode;
-    return this
+    return this;
   }
 
   /**
-   * 
-   * @param {*} value 
+   *
+   * @param {*} value
    * @return {LinkedListNode}
    */
   delete(value) {
@@ -77,7 +77,7 @@ class LinkedList {
     let deletedNode = null;
 
     // 如果 value是 链表头部
-    while(this.head && value === this.head.value) {
+    while (this.head && value === this.head.value) {
       deletedNode = this.head;
       this.head = this.head.next;
     }
@@ -86,7 +86,6 @@ class LinkedList {
 
     // 开始从 head 遍历
     if (currentNode !== null) {
-      
       while (currentNode.next) {
         if (currentNode.next.value === value) {
           deletedNode = currentNode;
@@ -98,10 +97,10 @@ class LinkedList {
     }
 
     // 如果value是链表的尾部
-    while(this.tail.value === value) {
-      this.tail = currentNode
+    while (this.tail.value === value) {
+      this.tail = currentNode;
     }
-    
+
     return deletedNode;
   }
 
@@ -112,7 +111,7 @@ class LinkedList {
   deleteTail() {
     const deletedTail = this.tail;
 
-    // 如果只有一个节点，tail 也就是 head 
+    // 如果只有一个节点，tail 也就是 head
     if (this.head === this.tail) {
       this.head = null;
       this.tail = null;
@@ -122,7 +121,7 @@ class LinkedList {
 
     // 重新找回 tail , 也就是 tail前一个节点
     let currentNode = this.head;
-    while(currentNode.next) {
+    while (currentNode.next) {
       // 跟下面的实现一样
       if (currentNode.next !== deletedTail) {
         currentNode = currentNode.next;
@@ -178,31 +177,28 @@ class LinkedList {
 
   /**
    * 把一个数组转换为链表， 就是遍历 数组，然后 append
-   * @param {[]]} values 
+   * @param {[]]} values
    * @return {LinkedList}
    */
   fromArray(values) {
-    values.forEach(item => this.append(item));
+    values.forEach((item) => this.append(item));
     return this;
   }
 
-  reverse() {
-    
-  }
-
+  reverse() {}
 }
 
 const liskedList = new LinkedList();
 
-liskedList.append(3)
-liskedList.append(4)
-liskedList.append(5)
+liskedList.append(3);
+liskedList.append(4);
+liskedList.append(5);
 liskedList.prepend(2);
 liskedList.delete(2);
 liskedList.deleteTail();
 liskedList.deleteTail();
 // liskedList.deleteTail();
 
-console.log(liskedList)
+console.log(liskedList);
 
 // console.log(liskedList.find(4))
