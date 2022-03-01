@@ -7,13 +7,15 @@ class LinkedList {
   }
 
   /**
+   * 添加到链表尾部
    * @param {} value
    * @return {LinkenList}
    */
   append(value) {
     const newNode = new LinkedListNode(value);
 
-    // 如果链表没有节点，则
+    // 如果链表没有节点，则新节点是头部也是尾部
+    // 就是可能需要考虑一些情况，
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
@@ -51,6 +53,7 @@ class LinkedList {
 
   /**
    * 添加到链表头部
+   * 跟 append 的操作相反
    * @param {*} value
    * @returns {LinkedListNode}
    */
@@ -74,7 +77,7 @@ class LinkedList {
   delete(value) {
     if (!this.head) return null;
 
-    let deletedNode = null;
+    let deletedNode = null; // 找到这个deleteNode 然后从链表中移除
 
     // 如果 value是 链表头部
     while (this.head && value === this.head.value) {
