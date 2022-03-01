@@ -171,11 +171,12 @@ class LinkedList {
    */
   toArray() {
     const nodes = [];
-    const currentNode = this.head;
+    let currentNode = this.head;
     while (currentNode) {
       nodes.push(currentNode);
       currentNode = currentNode.next;
     }
+    return nodes;
   }
 
   /**
@@ -196,12 +197,17 @@ const liskedList = new LinkedList();
 liskedList.append(3);
 liskedList.append(4);
 liskedList.append(5);
-liskedList.prepend(2);
-liskedList.delete(2);
-liskedList.deleteTail();
-liskedList.deleteTail();
+// liskedList.prepend(2);
+// liskedList.delete(2);
+// liskedList.deleteTail();
+// liskedList.deleteTail();
 // liskedList.deleteTail();
 
-console.log(liskedList);
+// console.log(liskedList);
+console.log(liskedList.toArray());
 
 // console.log(liskedList.find(4))
+
+module.exports = {
+  LinkedList,
+};
