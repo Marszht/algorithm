@@ -22,9 +22,20 @@ class Queue {
     return removeHead ? removeHead.value : null;
   }
 
-  isEmpty() {}
-  peek () {}
-  toArray() {}
+  // 判断这个队列是否为空
+  isEmpty() {
+    return !this.linkedList.head;
+  }
+
+  // 取队首第一个元素值
+  peek () {
+    if (!this.linkedList.head) { return null; }
+    return this.linkedList.head.value;
+  }
+
+  toArray() {
+    return this.linkedList.toArray().map(currentNode => currentNode.value);
+  }
 
   
 }
