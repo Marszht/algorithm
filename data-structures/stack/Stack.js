@@ -11,8 +11,8 @@ class Stack {
    * @param {*} value 
    */
   push (value) {
-    // 直接在链表结尾增加节点
-    this.linkedList.append(value);
+    // 直接在链表头部增加节点
+    this.linkedList.prepend(value);
   }
 
   /**
@@ -52,8 +52,8 @@ const stack = new Stack();
 
 stack.push(1);
 stack.push(2);
-// stack.push(3);
-// stack.pop();
+stack.push(3);
+stack.pop();
 let arr = stack.toArray();
 console.log(stack);
 console.log(arr);

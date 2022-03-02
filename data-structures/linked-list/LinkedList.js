@@ -28,22 +28,23 @@ class LinkedList {
   }
 
   /**
-   * @param {object} findPa rams
+   * @param {object} findParams
    * @param {*} findParams.value
    * @param {Function} [findParams.callback ]
    * @returns {LinkedListNode}
    */
   find({ value = undefined, callback = undefined }) {
-    if (!this.head) return false;
+    if (!this.head) return null; // 有时候多考虑一下为空的情况
 
     let currentNode = this.head;
 
     while (currentNode) {
-      // 这个其实可以不用
+      // 这个其实可以不用， 就是使用自己定义的函数来处理 
       if (callback && callback(currentNode.value)) {
         return currentNode;
       }
 
+      //  这个 undefined 的条件有点多余
       if (value !== undefined && currentNode.value === value) {
         return currentNode;
       }
@@ -189,14 +190,20 @@ class LinkedList {
     return this;
   }
 
-  reverse() {}
+  /**
+   * 反转一个链表
+   * @return {LinkedList}
+   */
+  reverse() {
+    let currentNode = this.head;
+  }
 }
 
 const liskedList = new LinkedList();
 
 liskedList.append(3);
 liskedList.append(4);
-liskedList.append(5);
+// liskedList.append(5);
 // liskedList.prepend(2);
 // liskedList.delete(2);
 // liskedList.deleteTail();
@@ -205,6 +212,7 @@ liskedList.append(5);
 
 // console.log(liskedList);
 console.log(liskedList.toArray());
+console.log(liskedList.fromArray([1,2,3]));
 
 // console.log(liskedList.find(4))
 
