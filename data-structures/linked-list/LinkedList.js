@@ -39,7 +39,7 @@ class LinkedList {
     let currentNode = this.head;
 
     while (currentNode) {
-      // 这个其实可以不用， 就是使用自己定义的函数来处理 
+      // 这个其实可以不用， 就是使用自己定义的函数来处理
       if (callback && callback(currentNode.value)) {
         return currentNode;
       }
@@ -196,6 +196,21 @@ class LinkedList {
    */
   reverse() {
     let currentNode = this.head;
+    let preNode = null;
+    let nextNode = null;
+
+    while (currentNode) {
+      // 保存下一个节点
+      nextNode = currentNode.next;
+
+      currentNode.next = prevNode;
+      preNode = currentNode;
+
+      currentNode = nextNode;
+    }
+
+    this.tail = this.head;
+    this.head = preNode;
   }
 }
 
@@ -212,7 +227,7 @@ liskedList.append(4);
 
 // console.log(liskedList);
 console.log(liskedList.toArray());
-console.log(liskedList.fromArray([1,2,3]));
+console.log(liskedList.fromArray([1, 2, 3]));
 
 // console.log(liskedList.find(4))
 
