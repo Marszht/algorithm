@@ -11,7 +11,7 @@ const cartesianProduct = (x, y) => {
   let product = [];
   for(let i = 0; i < x.length; i++) {
     for (let j = 0; j < y.length; j++) {
-      sets.push([x[i], y[j]]);
+      product.push([x[i], y[j]]);
     }
   }
   return product;
