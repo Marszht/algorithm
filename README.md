@@ -23,6 +23,7 @@
 - [快速算次方根](./algorithms/math/fast-power/fastPowering.js)
 - [是否为2的次方根](./algorithms/math/is-power-of-two/isPowerOfTwo.js)
 - [最小公倍数](./algorithms/math/least-common-multiple/leastCommonMultiple.js)
+- [角度和弧度换算](./algorithms/math/radian)
 
 ## [sets](./algorithms/sets)
 - [笛卡尔积](./algorithms/sets/cartesian-product/cartesian-product.js)
