@@ -4,6 +4,8 @@
 ## [data-structure](./data-structures)
 -[堆](./data-structures/heap/Heap.js)
 -[链表](./data-structures/linked-list/LinkedList.js)
+-[队列](./data-structures/queue/Queue.js)
+-[栈](./data-structures/stack/Stack.js)
 
 
 ## [sort 排序](./algorithms/sort) 
